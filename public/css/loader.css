@@ -1,0 +1,59 @@
+.container-loader {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+}
+
+.text-load {
+    position: absolute;
+    bottom: 28px;
+    color: white;
+    font-weight: 600;
+    background-color: #4a596a;
+    border-radius: 6px;
+    padding: 0.4rem 0.5rem 0.3rem;
+}
+
+.load {
+    width: 8px;
+    height: 40px;
+    border-radius: 4px;
+    display: block;
+    margin: 20px auto;
+    position: relative;
+    background: currentColor;
+    color: #409eff;
+    box-sizing: border-box;
+    transform: scale(0.8);
+    animation: animloader 0.3s 0.3s linear infinite alternate;
+}
+
+.load::after,
+.load::before {
+    content: "";
+    width: 8px;
+    height: 40px;
+    border-radius: 4px;
+    background: currentColor;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    box-sizing: border-box;
+    animation: animloader 0.3s 0.45s linear infinite alternate;
+}
+.load::before {
+    left: -20px;
+    animation-delay: 0s;
+}
